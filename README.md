@@ -25,3 +25,39 @@ Each semester, remember to update the Google Calendar id (`googleCalendarId`) in
 If you want to change the colors, modify the `recolorCalendarEvent()` function in `index.html`.
 
 If the Google Calendar API key is not working, follow the guide on this page to obtain a new API key: [https://fullcalendar.io/docs/google-calendar](https://fullcalendar.io/docs/google-calendar).
+
+## Custom font icon pack
+We use custom icons for things like "Piazza", "Emacs", etc.  The icons are in a custom generated font pack which lives in `assets/fonts`. `assets/css/customfontpack.css` enables the font to work by assigning each glyph to a unique Unicode value. 
+
+The icon pack contains icons for the following IDEs:
+* VS Code
+* Visual Studio
+* Xcode
+* Emacs
+* Vim
+* CLion
+* Atom
+* IntelliJ
+
+How to add a new icon:
+
+0. Clone this repository.
+1. Obtain a SVG graphic of your desired icon. It **must** be a single color. Make sure your SVG filename is short and clear. For example, the SVG file for "VS Code" is called "vscode". If the filename must have spaces, delimit them with a hyphen (-)
+2. Navigate to [icomoon.io/app/](https://icomoon.io/app/#/select).
+3. Select the purple "Import Icons" button near the top left.
+4. Select `docs/assets/fonts/custom.json` from the website repository in your file explorer.
+5. Select the hamburger icon on the right parallel to the title of the icon set then select "Import to Set"
+6. Once your icon is in the set, select "Generate Font" near the bottom right.
+7. Select "Preferences" near the top.
+8. Expand "CSS Selector" and make sure "Use i (for selecting `<i>`) is selected. Make sure the Font Name is "custom" and the Class Prefix is "icon-". Close preferences.
+9. Select the download button near the bottom right. Download and unzip `custom-v1.0.zip` into a folder **not** in the repository.
+10. Navigate to `custom-v1.0/fonts` and copy the following files
+    * `custom.eot`
+    * `custom.svg`
+    * `custom.ttf`
+    * `custom.woff`
+
+    into `docs/assets/fonts` to replace the old files.
+11. Navigate to `docs/assets/css/customfontpack.css` and add a selector for your new icon in the format `.icon<icon-name>:before`. In the body add `content: "\<Unicode value>";`. The Unicode value for an icon can be found on the Generate page on icomoon.io under the name of the icon.
+12. Add an icon to the website with the following HTML: `<span data-tooltip="<Icon title>"><i class="icon-<icon-name>"></i></span>`
+13. Lastly, download the JSON file for your new icon pack from icomoon.io by selecting "Download JSON" on the icon menu where you previously selected "Import to Set" and replace the old `custom.json` file in the repository.
