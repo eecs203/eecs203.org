@@ -4,8 +4,26 @@ EECS 203 course web site
 
 The HTML content in `/docs/` is publicly available at [https://eecs203.github.io/eecs203.org/](https://eecs203.github.io/eecs203.org/).
 
+
 ## Contributing
+First clone the website through either HTTP or SSH
+HTTP:
+```console
+$ git clone https://github.com/eecs203/eecs203.org.git
+cd eecs203.org
+```
+
+SSH:
+```console
+$ git clone https://github.com/eecs203/eecs203.org.git
+cd eecs203.org
+```
+
 To update the website, modify the files in `/docs/`, merge to `main` and push to GitHub.
+
+The main html file that will be displayed on the website is /docs/index.html.
+
+To add custom css, add css to /docs/assets/css/customfontpack.css
 
 Test locally by navigating to http://localhost:8000/
 ```console
