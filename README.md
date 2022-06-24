@@ -10,13 +10,13 @@ First clone the website through either HTTP or SSH
 HTTP:
 ```console
 $ git clone https://github.com/eecs203/eecs203.org.git
-cd eecs203.org
+$ cd eecs203.org
 ```
 
 SSH:
 ```console
-$ git clone https://github.com/eecs203/eecs203.org.git
-cd eecs203.org
+$ git clone git@github.com:eecs203/eecs203.org.git
+$ cd eecs203.org
 ```
 
 To update the website, modify the files in `/docs/`, merge to `main` and push to GitHub.
