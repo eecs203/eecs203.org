@@ -155,7 +155,10 @@
            the JavaScript source code at the end of this file.  Remember to
            update the 'googleCalendarId' found in the JavaScript code.
       -->
+      <div>Lecture/Discussion Calendar</div>
       <div id="calendar"></div>
+      <div style="margin:15px 0px 0px 0px">Office Hours Calendar</div>
+      <div id="calendarOH"></div>
       <p>
         <a href="FIXME" target="_blank">
           Open calendar in new window
@@ -293,7 +296,8 @@
       <div class="ui section divider"></div>
 
       <!-- Schedule -->
-      <h2 id="schedule">Schedule</h2>
+      <!-- Removed from 203 website temporarily -->
+      <!-- <h2 id="schedule">Schedule</h2>
       <p>All times are listed as Ann Arbor local time (ET)</p>
       <table class="ui celled striped table">
         <thead>
@@ -332,13 +336,13 @@
             <td>
               <div class="ui red horizontal basic label">
                 Project 1 due Sun Sep 11 11:59pm
-                <!--
+                
                 <a class="ui grey basic label" style="opacity:1;" href="https://eecs485staff.github.io/p1-insta485-static/"
                   target="_blank">
                   <i class="file alternate outline icon"></i>
                   Spec
                 </a>
-                -->
+               
               </div>
             </td>
           </tr>
@@ -367,13 +371,13 @@
             <td>
               <div class="ui red horizontal basic label">
                 Project 2 due Sun Sep 25 11:59pm
-                <!--
+                
                 <a class="ui grey basic label" style="opacity:1;" href="https://eecs485staff.github.io/p2-insta485-serverside/"
                 target="_blank">
                 <i class="file alternate outline icon"></i>
                 Spec
               </a>
-              -->
+             
               </div>
             </td>
           </tr>
@@ -414,13 +418,13 @@
             <td>
               <div class="ui red horizontal basic label">
                 Project 3 due Sun Oct 16 11:59pm
-                <!--
+                
                 <a class="ui grey basic label" style="opacity:1;" href="https://eecs485staff.github.io/p3-insta485-clientside/"
                 target="_blank">
                 <i class="file alternate outline icon"></i>
                 Spec
               </a>
-              -->
+             
               </div>
             </td>
           </tr>
@@ -495,13 +499,13 @@
             <td>
               <div class="ui red horizontal basic label">
                 Project 4 due Tue Nov 15 11:59pm
-                <!--
+                
                 <a class="ui grey basic label" style="opacity:1;" href="https://eecs485staff.github.io/p4-mapreduce/"
                 target="_blank">
                 <i class="file alternate outline icon"></i>
                 Spec
                 </a>
-                -->
+               
               </div>
             </td>
           </tr>
@@ -544,13 +548,13 @@
             <td>
               <div class="ui red horizontal basic label">
                 Project 5 due Tue Dec 6 11:59pm
-                <!--
+                
                 <a class="ui grey basic label" style="opacity:1;" href="https://eecs485staff.github.io/p5-search-engine/"
                 target="_blank">
                 <i class="file alternate outline icon"></i>
                 Spec
                 </a>
-                -->
+               
               </div>
             </td>
           </tr>
@@ -568,17 +572,18 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
 
       <div class="ui section divider"></div>
 
 
       <!-- People section -->
-      <h2 id="people">People</h2>
+      <!-- <h2 id="people">People</h2>
       <p>Reach us at <a href="mailto:eecs485staff@umich.edu">eecs485staff@umich.edu</a></p>
-      <div class="ui three stackable cards">
+      <div class="ui three stackable cards"> -->
 
-        <div class="ui fluid card">
+        <!-- Sample people card -->
+        <!-- <div class="ui fluid card">
           <div class="image">
             <img src="assets/headshots/awdeorio.jpg" alt="Andrew DeOrio head shot" />
           </div>
@@ -601,26 +606,9 @@
             <span data-variation="wide fixed" data-tooltip="Recommend music for me!  I listen to a lot of WCBN, our student-run radio station."><em data-emoji="notes"></em></span>
             <span data-tooltip="Hangin' out with my baby girls."><em data-emoji="baby"></em></span>
           </div>
-        </div><!-- /fluid card -->
+        </div> -->
+        <!-- /fluid card -->
 
-        <div class="ui fluid card">
-          <div class="image">
-            <img src="assets/headshots/almomani.jpg" alt="Raed Almomani head shot" />
-          </div>
-          <div class="content">
-            <div class="header">
-              Raed Almomani
-            </div>
-            <div class="description">
-              <p><i class="icon envelope"></i>almomani@umich.edu</p>
-            </div>
-          </div>
-          <div class="extra content">
-            <span data-tooltip="Windows 10"><i class="icon windows"></i></span>
-            <span data-tooltip="I enjoy traveling."><em data-emoji="airplane"></em></span>
-            <span data-tooltip="I enjoy playing ping pong!"><em data-emoji="ping_pong"></em></span>
-          </div>
-        </div><!-- /fluid card -->
 
       </div><!-- ui stackable cards -->
       <div class="ui hidden section divider"></div>
@@ -669,43 +657,54 @@
    // Uses the FullCalendar library and connects to Google Calendar
    // https://fullcalendar.io/docs
    // https://fullcalendar.io/docs/google-calendar
+
+   function embedCalendar(calendarId, googleCalendarId) {
+    var calendarEl = document.getElementById(calendarId);
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      // Google Calendar API, DO NOT CHANGE
+      // https://fullcalendar.io/docs/google-calendar
+      googleCalendarApiKey: 'AIzaSyAiEWXOLNCeznI7k6r0-taknkWGh0rcRwU',
+
+      // Google Calendar ID CHANGE THIS EACH SEMESTER
+      events: {
+        googleCalendarId: googleCalendarId,
+      },
+
+      // Tool bar options.  Hide "today" button on mobile to save space.
+      // https://fullcalendar.io/docs/headerToolbar
+      headerToolbar: {
+        end: isSmallScreen() ? 'prev,next' : 'today prev,next',
+      },
+
+      // View options
+      // https://fullcalendar.io/docs/timegrid-view
+      initialView: isSmallScreen() ? 'timeGridDay' : 'timeGridWeek',
+      allDaySlot: true,
+      nowIndicator: true,
+      scrollTime: "08:00:00",
+
+      // Selectively recolor calendar events
+      // https://fullcalendar.io/docs/event-render-hooks
+      eventContent: recolorCalendarEvent,
+
+      // Add click-for-popup to calendar events
+      // https://fullcalendar.io/docs/event-render-hooks
+      eventDidMount: addPopup,
+
+      aspectRatio: isSmallScreen() ? .75 : 1.35,
+    });
+    calendar.render();
+   }
+
    document.addEventListener('DOMContentLoaded', function() {
-     var calendarEl = document.getElementById('calendar');
-     var calendar = new FullCalendar.Calendar(calendarEl, {
-       // Google Calendar API, DO NOT CHANGE
-       // https://fullcalendar.io/docs/google-calendar
-       googleCalendarApiKey: 'AIzaSyAiEWXOLNCeznI7k6r0-taknkWGh0rcRwU',
-
-       // Google Calendar ID CHANGE THIS EACH SEMESTER
-       events: {
-         googleCalendarId: "c_9edep6pmng7u45c72ubmq4c540@group.calendar.google.com",
-       },
-
-       // Tool bar options.  Hide "today" button on mobile to save space.
-       // https://fullcalendar.io/docs/headerToolbar
-       headerToolbar: {
-         end: isSmallScreen() ? 'prev,next' : 'today prev,next',
-       },
-
-       // View options
-       // https://fullcalendar.io/docs/timegrid-view
-       initialView: isSmallScreen() ? 'timeGridDay' : 'timeGridWeek',
-       allDaySlot: true,
-       nowIndicator: true,
-       scrollTime: "08:00:00",
-
-       // Selectively recolor calendar events
-       // https://fullcalendar.io/docs/event-render-hooks
-       eventContent: recolorCalendarEvent,
-
-       // Add click-for-popup to calendar events
-       // https://fullcalendar.io/docs/event-render-hooks
-       eventDidMount: addPopup,
-
-       aspectRatio: isSmallScreen() ? .75 : 1.35,
-     });
-     calendar.render();
-   });
+    // TODO Change calendar link
+    calendarId = "c_0nbrbupt5b0jiacre5p9gg7uh8@group.calendar.google.com";
+    OHcalendarId = "c_9edep6pmng7u45c72ubmq4c540@group.calendar.google.com";
+    embedCalendar("calendar", calendarId);
+    embedCalendar("calendarOH", OHCalendarId);
+   })
+  
+     
 
    function recolorCalendarEvent(arg) {
      // Change calendar event colors based on string prefix
