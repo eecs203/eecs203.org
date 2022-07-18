@@ -96,6 +96,11 @@
     text-align: center;
 }
 
-.menu203 {
-    background: red;
+.pastCloseDate{
+    background-color: lightgray !important;
+}
+
+.beforeOpenDate{
+    background-color: lightgray !important;
+    pointer-events:none;
 }

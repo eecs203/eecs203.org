@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -156,14 +156,19 @@
            update the 'googleCalendarId' found in the JavaScript code.
       -->
       <div>Lecture/Discussion Calendar</div>
-      <div id="calendar"></div>
-      <div style="margin:15px 0px 0px 0px">Office Hours Calendar</div>
-      <div id="calendarOH"></div>
       <p>
         <a href="FIXME" target="_blank">
           Open calendar in new window
         </a>
       </p>
+      <div id="calendar"></div>
+      <div style="margin:15px 0px 0px 0px">Office Hours Calendar</div>
+      <p>
+        <a href="FIXME" target="_blank">
+          Open calendar in new window
+        </a>
+      </p>
+      <div id="OHcalendar"></div>
       <div class="ui section divider"></div>
 
       <!-- Template forms DO NOT REMOVE
@@ -183,22 +188,22 @@
       </a> -->
 
       <!-- Survey section - Admin -->
-      <h2 id="survey">Surveys</h2>
-      <div class="ui three stackable cards">
 
+      <h2 id="survey">Surveys</h2>
+      <div id="survey-cards"class="ui three stackable cards">
         <a class="ui raised card" target="_blank" href="https://umich.qualtrics.com/jfe/form/SV_0J3DqVVpOMkq1Ui">
-          <div class="content">
+          <div id = "fci-begin" class="content">
             <div class="header">
               FCI Beginning of term survey
             </div>
             <div class="description">
-              <p>Opens: Jan 17th, 2022</p>
-              <p>Closes: Jan 26th, 2022</p>
+              <p>Opens: <span class="open">Jan 17, 2022</span></p>
+              <p>Closes: <span class="close">Jan 26, 2022</span></p>
             </div>
           </div>
         </a>
         <a class="ui raised card" target="_blank" href="FIXME">
-          <div class="content">
+          <div id = "computing-cares" class="content">
             <!-- <div class="right aligned floating ui green label">
               Start here
             </div> -->
@@ -206,14 +211,14 @@
               Computing Cares Entry Survey
             </div>
             <div class="description">
-              <p>Opens: Jan 17th, 2022</p>
-              <p>Closes: Jan 26th, 2022</p>
+              <p>Opens: <span class="open">Jan 17, 2022</span></p>
+              <p>Closes: <span class="close">Jan 26, 2023</span></p>
             </div>
           </div>
         </a>
 
         <a class="ui raised card" target="_blank" href="FIXME">
-          <div class="content">
+          <div id = "exam-conflict" class="content">
             <!-- <div class="right aligned floating ui green label">
               Start here
             </div> -->
@@ -221,9 +226,8 @@
               Exam Conflict Survey
             </div>
             <div class="description">
-              <b>FILL THIS OUT EVEN IF YOU DO NOT HAVE EXAM CONFLICTS</b>
-              <p>Opens: Jan 17th, 2022</p>
-              <p>Closes: Jan 28th, 2022</p>
+              <p>Opens: <span class="open">Jan 17, 2023</span></p>
+              <p>Closes: <span class="close">Jan 26, 2023</span></p>
             </div>
           </div>
         </a>
@@ -616,7 +620,7 @@
   </div>
 
   <footer>
-    <div class="ui inverted menu menu203" style="color:">
+    <div class="ui inverted menu">
     </div>
   </footer>
 
@@ -696,13 +700,40 @@
     calendar.render();
    }
 
+   function disableFormsByDate() {
+      const element = document.getElementById('survey-cards');
+      const cards = element.children;
+      for(let i = 0; i < cards.length; i++){
+          const card = cards[i];
+          const open = card.querySelector('.open').innerHTML;
+          const close = card.querySelector('.close').innerHTML;
+          const openDate = Date.parse(open);
+          const closeDate = Date.parse(close);
+          const today = Date.now();
+          if (openDate > closeDate) {
+            console.log("open date earlier than close date");
+            continue;
+          }
+          if(today > closeDate){
+            // past close date
+            card.classList.toggle("pastCloseDate");
+          }
+          else if (openDate > today) {
+            // before open date
+            card.classList.toggle("beforeOpenDate");
+          }
+      }
+   }
+
    document.addEventListener('DOMContentLoaded', function() {
     // TODO Change calendar link
-    calendarId = "c_0nbrbupt5b0jiacre5p9gg7uh8@group.calendar.google.com";
-    OHcalendarId = "c_9edep6pmng7u45c72ubmq4c540@group.calendar.google.com";
+    const calendarId = "c_0nbrbupt5b0jiacre5p9gg7uh8@group.calendar.google.com";
+    const OHcalendarId = "c_9edep6pmng7u45c72ubmq4c540@group.calendar.google.com";
     embedCalendar("calendar", calendarId);
-    embedCalendar("calendarOH", OHCalendarId);
-   })
+    embedCalendar("OHcalendar", OHcalendarId);
+    disableFormsByDate();
+
+  })
   
      
 
@@ -772,4 +803,4 @@
   </script>
 
 </body>
-</html>
+</html> -->
