@@ -104,3 +104,7 @@
     background-color: lightgray !important;
     pointer-events:none;
 }
+
+.navBarColoring, .ui.vertical.inverted.menu .menu .item.navBarColoring {
+    color: #31385B;
+}
