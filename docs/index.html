@@ -30,7 +30,7 @@
 
     <!-- Logo and Course Title -->
     <div class="item">
-      <a class="ui logo icon image mini" href="#">
+      <a class="ui logo icon image mini" href="#" style="width: 65px">
         <img src="assets/images/eecs203logo.png" alt="logo">
       </a>
       <br>
@@ -139,7 +139,7 @@
 
       <!-- Announcement Box -->
         <div class="ui info message">
-        <div class="header">
+        <div class="header" id="announcement">
           Announcement here
         </div>
       </div>
@@ -837,6 +837,19 @@
      });
    }
   </script>
+
+  <!-- <script>
+    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSN98w8k_T1mxCDRm5hOsWMz1jPUA_uajGG8FG8XYkBUl_U_qQEWbt3KZZBT6OWDYcKw_jyAp1GE9jZ/pub?output=csv')
+      .then((response) => response.text())
+      .then(
+        (data) => {
+          console.log(data);
+          let announcement = document.getElementById("announcement");
+          announcement.innerHTML = data;
+        }
+      );
+
+  </script> -->
 
 </body>
 </html> -->
