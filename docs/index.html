@@ -41,6 +41,9 @@
     <!-- Internal links -->
     <div class="item">
       <div class="menu">
+        <a class="item navBarColoring" href="#quick-link">
+          Quick Links
+        </a>
         <a class="item navBarColoring" href="#survey">
           Surveys
         </a>
@@ -58,35 +61,35 @@
 
     <!-- External links -->
     <div id="navBarLinks" class="menu">
-      <a class="item navBarColoring" href="FIXME" target="_blank">
+      <a id="piazza-nav" class="item navBarColoring" target="_blank">
         <i class="icon-piazza big"></i><br>
         Piazza
       </a>
-      <a class="item navBarColoring" href="FIXME" target="_blank">
+      <a id="recordings-nav" class="item navBarColoring" target="_blank">
         <i class="play icon big"></i><br>
         Recordings
       </a>
-      <a class="item navBarColoring" href="FIXME" target="_blank">
+      <a id="gradescope-nav" class="item navBarColoring" target="_blank">
         <i class="icon-gradescope big"></i> <br>
         Gradescope
       </a>
-      <a class="item navBarColoring" href="FIXME" target="_blank">
+      <a id="canvas-nav" class="item navBarColoring" target="_blank">
         <i class="icon-canvas big"></i> <br>
         Canvas
       </a>
-      <a class="item navBarColoring" href="FIXME" target="_blank">
+      <a id="homework-nav" class="item navBarColoring" target="_blank">
         <i class="book icon big"></i><br>
         Homework
       </a>
-       <a class="item navBarColoring" href="https://oh.eecs.umich.edu/courses/eecs203" target="_blank">
+       <a id="office-hours-nav"class="item navBarColoring" target="_blank">
         <i class="question circle outline icon big"></i><br>
         Office Hours
       </a>
-      <a class="item navBarColoring" href="https://www.youtube.com/channel/UCTZvuBPV91HUUdb25o3C7sg" target="_blank">
+      <a id="youtube-nav"class="item navBarColoring" target="_blank">
         <i class="youtube icon big"></i><br>
         Youtube
       </a>
-      <a class="item navBarColoring" href="https://problemroulette.ai.umich.edu/Welcome/?next=/courses/EECS203-25/" target="_blank">
+      <a id="problem-roulette-nav" class="item navBarColoring" target="_blank">
         <i class="icon-vscode big"></i><br>
         Problem Roulette
       </a>
@@ -148,11 +151,8 @@
       <div class="ui section divider"></div>
       
       <div>
-        <b id="QuickLinks">Quick Links</b>
-        <ul style="margin-top: 6px">
-          <li><b><a href="assets/files/syllabus.pdf" target="_blank">Syllabus</a></b></li>
-          <li><b><a href="https://docs.google.com/spreadsheets/d/1fBIZPyMYs8rINey3kw6dV0Xr6H9wlkNrUHsMSol1FiI/edit#gid=818404307" target="_blank">Course Schedule</a></b></li>
-          <li><b><a href="https://docs.google.com/document/d/1CJFwMnNqcyDgLgNIgSAjHlGGVuOvSmi6KuvmGQd9e04/edit" target="_blank">Learning Objectives</a></b></li>
+        <b id="quick-link">Quick Links</b>
+        <ul id="quick-link-list"style="margin-top: 6px">
         </ul>
       </div>
 
@@ -200,78 +200,7 @@
       <!-- Survey section - Admin -->
 
       <h2 id="survey">Surveys</h2>
-      <div id="survey-cards"class="ui three stackable cards">
-        <a class="ui raised card" target="_blank" href="https://umich.qualtrics.com/jfe/form/SV_0J3DqVVpOMkq1Ui">
-          <div id = "fci-begin" class="content">
-            <div class="header">
-              FCI Beginning of term survey
-            </div>
-            <div class="description">
-              <p>Opens: <span class="open">Jan 17, 2022</span></p>
-              <p>Closes: <span class="close">Jan 26, 2022</span></p>
-            </div>
-          </div>
-        </a>
-        <a class="ui raised card" target="_blank" href="FIXME">
-          <div id = "computing-cares" class="content">
-            <!-- <div class="right aligned floating ui green label">
-              Start here
-            </div> -->
-            <div class="header">
-              Computing Cares Entry Survey
-            </div>
-            <div class="description">
-              <p>Opens: <span class="open">Jan 17, 2022</span></p>
-              <p>Closes: <span class="close">Jan 26, 2023</span></p>
-            </div>
-          </div>
-        </a>
-
-        <a class="ui raised card" target="_blank" href="FIXME">
-          <div id = "exam-conflict" class="content">
-            <!-- <div class="right aligned floating ui green label">
-              Start here
-            </div> -->
-            <div class="header">
-              Exam Conflict Survey
-            </div>
-            <div class="description">
-              <p>Opens: <span class="open">Jan 17, 2023</span></p>
-              <p>Closes: <span class="close">Jan 26, 2023</span></p>
-            </div>
-          </div>
-        </a>
-
-        <a class="ui raised card" target="_blank" href="FIXME">
-          <div class="content">
-            <!-- <div class="right aligned floating ui green label">
-              Start here
-            </div> -->
-            <div class="header">
-              FCI End of term survey
-            </div>
-            <div class="description">
-              <p>Opens: FIXME DATE HERE</p>
-              <p>Closes: FIXME DATE HERE</p>
-            </div>
-          </div>
-        </a>
-        <a class="ui raised card" target="_blank" href="FIXME">
-          <div class="content">
-            <!-- <div class="right aligned floating ui green label">
-              Start here
-            </div> -->
-            <div class="header">
-              Computing Cares Exit Survey
-            </div>
-            <div class="description">
-              <p>Opens: FIXME DATE HERE</p>
-              <p>Closes: FIXME DATE HERE</p>
-            </div>
-          </div>
-        </a>
-
-      </div>
+      <div id="survey-cards"class="ui three stackable cards"></div>
       <div class="ui section divider"></div>
 
       <!-- Template forms DO NOT REMOVE
@@ -291,12 +220,9 @@
 
       <!-- Admin Forms section -->
       <h2 id="admin-form">Admin Related Forms</h2>
-      <div class="ui three stackable cards">
-        <a class="ui raised card" target="_blank" href="FIXME">
+      <div id="admin-form-cards" class="ui three stackable cards">
+        <!-- <a class="ui raised card" target="_blank" href="FIXME">
           <div class="content">
-            <!-- <div class="right aligned floating ui green label">
-              Start here
-            </div> -->
             <div class="header">
               Admin Form
             </div>
@@ -307,9 +233,6 @@
         </a>
         <a class="ui raised card" target="_blank" href="FIXME">
           <div class="content">
-            <!-- <div class="right aligned floating ui green label">
-              Start here
-            </div> -->
             <div class="header">
               Exam Accommodation Confirmation
             </div>
@@ -320,9 +243,6 @@
         </a>
         <a class="ui raised card" target="_blank" href="FIXME">
           <div class="content">
-            <!-- <div class="right aligned floating ui green label">
-              Start here
-            </div> -->
             <div class="header">
               Anonymous Feedback Form
             </div>
@@ -330,7 +250,7 @@
               If you have any criticism or compliments, drop it in our anonymous feedback form! We would love to hear from you to make our course better :))
             </div>
           </div>
-        </a>
+        </a> -->
        
       </div>
       <div class="ui section divider"></div>
@@ -767,7 +687,10 @@
     const OHcalendarId = "c_9edep6pmng7u45c72ubmq4c540@group.calendar.google.com";
     embedCalendar("calendar", calendarId);
     embedCalendar("OHcalendar", OHcalendarId);
-    disableFormsByDate();
+    renderSurvey();
+    renderAdminForm();
+    renderQuickLinks();
+    renderNavBarLinks();
 
   })
   
@@ -838,18 +761,137 @@
    }
   </script>
 
-  <!-- <script>
-    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSN98w8k_T1mxCDRm5hOsWMz1jPUA_uajGG8FG8XYkBUl_U_qQEWbt3KZZBT6OWDYcKw_jyAp1GE9jZ/pub?output=csv')
-      .then((response) => response.text())
-      .then(
-        (data) => {
-          console.log(data);
-          let announcement = document.getElementById("announcement");
-          announcement.innerHTML = data;
-        }
-      );
+  <script>
+    function htmlToElement(html) {
+      var template = document.createElement('template');
+      html = html.trim(); // Never return a text node of whitespace as the result
+      template.innerHTML = html;
+      return template.content.firstChild;
+    }
 
-  </script> -->
+    function newSurveyCard(formName, open, close, link) {
+      const templateString = `
+        <a class="ui raised card" target="_blank" href="${link}">
+          <div id = "fci-begin" class="content">
+            <div class="header">
+              ${formName}
+            </div>
+            <div class="description">
+              <p>Opens: <span class="open">${open}</span></p>
+              <p>Closes: <span class="close">${close}</span></p>
+            </div>
+          </div>
+        </a>
+      `
+      return htmlToElement(templateString);
+    }
+
+    function newAdminCard(formName, description, link) {
+      const templateString = `
+        <a class="ui raised card" target="_blank" href="${link}">
+          <div class="content">
+            <div class="header">
+              ${formName}
+            </div>
+            <div class="description">
+              ${description}
+            </div>
+          </div>
+        </a>
+      `
+      return htmlToElement(templateString);
+    }
+
+    function newQuickLink(linkName, link) {
+      const templateString = `
+        <li><b><a href="${link}" target="_blank">${linkName}</a></b></li>
+      `
+      return htmlToElement(templateString);
+    }
+  </script>
+
+  <script>
+    function renderSurvey() {
+      const surveySpreadsheetLink = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSN98w8k_T1mxCDRm5hOsWMz1jPUA_uajGG8FG8XYkBUl_U_qQEWbt3KZZBT6OWDYcKw_jyAp1GE9jZ/pub?output=tsv';
+      fetch(surveySpreadsheetLink)
+        .then((response) => response.text())
+        .then(
+          (data) => {
+            data = data.split("\r\n");
+            let announcement = document.getElementById("survey-cards");
+            // Starting at 1 to ignore header
+            for (let i = 1; i < data.length; i++) {
+              const form = data[i].split("\t")
+              announcement.appendChild(
+                newSurveyCard(form[0],form[1],form[2], form[3])
+              );
+            }
+          }
+        )
+        .then(
+          () => disableFormsByDate()
+        );
+    }
+
+    function renderAdminForm() {
+      const adminSpreadsheetLink = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSs1Nn3IRnnHMuwjqlF7kq6L9688Fz4IZL4dMgu8L-UKnFI0wOBtxVByj0KaTqXoxAr75dx-YrG8DfN/pub?output=tsv';
+      fetch(adminSpreadsheetLink)
+        .then((response) => response.text())
+        .then(
+          (data) => {
+            data = data.split("\r\n");
+            let announcement = document.getElementById("admin-form-cards");
+            // Starting at 1 to ignore header
+            for (let i = 1; i < data.length; i++) {
+              const form = data[i].split("\t")
+              announcement.appendChild(
+                newAdminCard(form[0],form[1],form[2])
+              );
+            }
+          }
+        );
+    }
+
+    function renderQuickLinks() {
+      const quickLinksSpreadsheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTxXJeXMUNL_artpuxj-p6nSo8nXOyqiRD3MbWfuUG0QJ87EEGPinIXgjIZOgzbtXIHYQT7APkScH6E/pub?output=tsv';
+      fetch(quickLinksSpreadsheet)
+        .then((response) => response.text())
+        .then(
+          (data) => {
+            data = data.split("\r\n");
+            let announcement = document.getElementById("quick-link-list");
+            // Starting at 1 to ignore header
+            for (let i = 1; i < data.length; i++) {
+              const form = data[i].split("\t")
+              console.log(form)
+              announcement.appendChild(
+                newQuickLink(form[0],form[1])
+              );
+            }
+          }
+        );
+    }
+
+    function renderNavBarLinks() {
+      const navBarSpreadsheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQJvCkl3fpFk05988dEqEfIiViDUHeht7pYjITBUvKZG1FRlIQ4iI29GpXcLwmXMoZbVf04eDnJXGfD/pub?output=tsv';
+      fetch(navBarSpreadsheet)
+        .then((response) => response.text())
+        .then(
+          (data) => {
+            data = data.split("\r\n");
+            let announcement = document.getElementById("quick-link-list");
+            // Starting at 1 to ignore header
+            for (let i = 1; i < data.length; i++) {
+              const form = data[i].split("\t")
+              const linkId = form[0].toLowerCase().replace(" ", "-") + "-nav";
+              link = document.getElementById(linkId);
+              link.setAttribute("href", form[1]);
+            }
+          }
+        );
+    }
+
+  </script>
 
 </body>
 </html> -->
