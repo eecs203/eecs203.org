@@ -665,7 +665,7 @@
           const close = card.querySelector('.close').innerHTML;
           if (open == "TBD") {
             card.classList.toggle("beforeOpenDate");
-            return
+            continue;
           }
           const openDate = Date.parse(open);
           const closeDate = Date.parse(close);
