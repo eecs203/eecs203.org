@@ -663,6 +663,9 @@
           const card = cards[i];
           const open = card.querySelector('.open').innerHTML;
           const close = card.querySelector('.close').innerHTML;
+          if (open == "TBD" || close == "TBD") {
+            card.classList.toggle("beforeOpenDate");
+          }
           const openDate = Date.parse(open);
           const closeDate = Date.parse(close);
           const today = Date.now();
